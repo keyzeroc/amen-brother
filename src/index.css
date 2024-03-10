@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/********** Range Input Styles **********/
+/*Range Reset*/
+#volumeRange {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Removes default focus */
+#volumeRange:focus {
+  outline: none;
+}
+
+/***** Chrome, Safari, Opera and Edge Chromium styles *****/
+/* slider track */
+#volumeRange::-webkit-slider-runnable-track {
+  background-color: #5e055f;
+  background-image: linear-gradient(
+    92.7deg,
+    rgba(245, 212, 212, 1) 8.5%,
+    rgba(252, 251, 224, 1) 90.2%
+  );
+  border-radius: 0.5rem;
+  height: 0.5rem;
+}
+
+/* slider thumb */
+#volumeRange::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  margin-top: -12px; /* Centers thumb on the track */
+
+  /*custom styles*/
+  background-color: #5cd5eb;
+  background-image: linear-gradient( 68.2deg,  rgba(255,202,88,1) 0%, rgba(139,73,255,1) 100.2% );
+  height: 2rem;
+  width: 1rem;
+}
+
+#volumeRange:focus::-webkit-slider-thumb {
+  border: 1px solid rgb(103, 25, 228);
+  outline: 2px solid rgb(103, 25, 228);
+}
+
+/******** Firefox styles ********/
+/* slider track */
+#volumeRange::-moz-range-track {
+  background-color: #5e055f;
+  background-image: linear-gradient(
+    103.3deg,
+    rgba(252, 225, 208, 1) 30%,
+    rgba(255, 173, 214, 1) 55.7%,
+    rgb(151, 177, 242) 81.8%
+  );
+  border-radius: 0.5rem;
+  height: 0.5rem;
+}
+
+/* slider thumb */
+#volumeRange::-moz-range-thumb {
+  border: none; /*Removes extra border that FF applies*/
+  border-radius: 0; /*Removes default border-radius that FF applies*/
+
+  /*custom styles*/
+  background-color: #5cd5eb;
+  background-image: linear-gradient( 68.2deg,  rgba(255,202,88,1) 0%, rgba(139,73,255,1) 100.2% );
+  height: 2rem;
+  width: 1rem;
+}
+
+#volumeRange:focus::-moz-range-thumb {
+  border: 1px solid rgb(103, 25, 228);
+  outline: 2px solid rgb(103, 25, 228);
+}
