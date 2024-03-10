@@ -14,7 +14,6 @@ interface ArrangementSliceProps extends AudioSliceInterface {
 }
 
 export default function AudioSliceArrangement({
-  src,
   text,
   position,
   onChangePosition,

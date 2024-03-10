@@ -16,9 +16,11 @@ function App() {
   };
 
   const onRemoveHandler = (position: number) => {
-    setArrangementList((preList) =>
-      preList.filter((item, index) => index !== position)
-    );
+    setArrangementList((prevList) => {
+      const newArr = [...prevList];
+      newArr.splice(position, 1);
+      return newArr;
+    });
   };
 
   const onChangePositionHandler = (position: number, newPosition: number) => {
@@ -32,9 +34,12 @@ function App() {
       return newArr;
     });
   };
-  
+
   return (
-    <div id="bgGradient" className="min-w-full h-svh bg-sky-800 text-white flex flex-col items-center gap-16">
+    <div
+      id="bgGradient"
+      className="min-w-full h-svh bg-sky-800 text-white flex flex-col items-center gap-16"
+    >
       <div className="w-4/5 mt-8">
         <AllAudioSlices
           onAddToArrangement={onAddToArrangementHandler}
